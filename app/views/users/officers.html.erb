@@ -1,0 +1,33 @@
+<div class="title-container text-light">
+  <h1>Officers</h1>
+</div>
+
+<div class="fixed_header">
+	<table class="table table-sm table-striped table-dark">
+		<thead>
+		    <tr>
+		    	<th span="col" class="col-3">Name</th>
+		    	<th span="col" class="col-3">Title</th>
+		    	<th span="col" class="col-3">Major</th>
+		    	<th span="col" class="col-3">Officer?</th>
+		    </tr>
+		</thead>
+		<tbody>
+			<div class="users container">
+			  <% @users.each do |user| %>
+			  <div class="user">
+			      <div class="text-light">
+			          <tr>
+			            <td class="col-3"><%= user.username %></td>
+			            <td class="col-3">test</td>
+			            <td class="col-3">test</td>
+			            <td class="col-3"><%= user.officer %></td>
+			          </tr>
+			      </div>
+			    </div>
+			  </div>
+			  <% end %>
+			</div>
+		</tbody>
+	</table>
+</div>

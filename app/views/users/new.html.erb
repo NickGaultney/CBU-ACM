@@ -1,0 +1,21 @@
+<div class="title-container text-light">
+	<h1>Sign Up</h1>
+</div>
+
+<%= form_with model: @user do |form| %>
+	<fieldset>
+   		<div class="form-group text-light">
+		  	<%= form.label :username%><br>
+		  
+		  	<%= form.text_field :username, class: "form-control"%><br>
+		  
+		  	<%= form.label :password%><br>
+		  
+		  	<%= form.password_field :password, class: "form-control"%><br>
+
+		  	<div class="actions">
+		  		<%= form.submit "Register" %>
+		  	</div>
+		</div>
+	</fieldset>
+<%end%>
