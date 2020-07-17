@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 	resources :users, only: [:new, :create]
 
 	get 'officers', to: 'users#officers'
@@ -12,4 +13,7 @@ Rails.application.routes.draw do
 	root to: 'static#welcome'
 	
 	get "/about", to: "static#about"
+
+	get "/posts", to: "posts#index"
+	post "/posts", to: "posts#create"
 end
