@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-	resources :users, only: [:new, :create]
+ 	resources :users do
+ 		member do
+ 			get :confirm_email
+ 		end	
+ 	end
 
-	get 'officers', to: 'users#officers'
+	get 'officers', to: 'users#index'
 
 	get 'login', to: 'sessions#new'
 

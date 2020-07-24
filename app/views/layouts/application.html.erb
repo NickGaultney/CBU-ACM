@@ -32,7 +32,7 @@
             <%= current_user.username %>
             <%= link_to "Sign Out", logout_path, class: "btn btn-link text-secondary"%>
           <% else %>
-            <%= link_to "Login", login_path, class: "btn btn-secondary my-2 my-sm-0"%>
+            <%= link_to "Register", new_user_path, class: "btn btn-secondary my-2 my-sm-0"%>
           <%end%>
 			 </div>
   		</nav>
@@ -41,10 +41,10 @@
   	<section class="container">
   		<div id="flash">
   			<% flash.each do |key, value| %>
-  			<div class="flash alert <%= alert_class(key) %>"><%= value %></div>	
+          <div class="flash alert"></div>	
   			<% end %>
   		</div>
     	<%= yield %>
-	</section>
+    </section>
   </body>
 </html>
