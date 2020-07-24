@@ -6,21 +6,11 @@ class SessionsController < ApplicationController
 
 	def create
 		@user = User.find_by(username: params[:username])
-		if @user && @user.authenticate(params[:password]) 
-			if @user.email_confirmed
-				session[:user_id] = @user.id
-	        	Rails.logger.info "*** Successully Logged In! ***"
-	        	redirect_to root_path
-        	else
-        		flash.now[:error] = 'Please activate your account by following the 
-        		instructions in the account confirmation email you received to proceed'
-        		Rails.logger.info "*** Account not Activated! ***"
-        		render :new
-        	end
+		if @user && @user.authenticate(params[:password])
+			session[:user_id] = @user.id
+			redirect_to root_path
 		else
-			flash.now[:error] = 'Invalid email/password combination' # Not quite right!
-			Rails.logger.info "*** Invalid password or username ***"
-        	render :new
+			redirect_to login_path
 		end
 	end
 

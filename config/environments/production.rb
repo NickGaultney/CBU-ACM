@@ -90,19 +90,4 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
-
-  config.action_mailer.delivery_method = :smtp
-  host = '10.147.19.177' #replace with your own url
-  config.action_mailer.default_url_options = { host: '10.147.19.177', protocol: 'http' }
-  config.action_mailer.raise_delivery_errors = true
-
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => "cbu.acm@gmail.com",
-    :password             => "rzrjdxhebanhzrqw",
-    :authentication       => "plain",
-    :enable_starttls_auto => true
-  }
 end
