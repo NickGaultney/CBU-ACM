@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+	namespace :api do
+		namespace :v1 do
+			post 'github_invite', to: 'bot#github_invite'
+		end
+	end
+
 	resources :users, only: [:new, :create]
 
 	get 'officers', to: 'users#officers'
