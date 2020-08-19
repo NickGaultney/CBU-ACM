@@ -5,7 +5,8 @@ class Api::V1::BotController < ApplicationController
 
 	def github_invite
 		Open3.popen2("python3 /home/CaptainWhymer/github_invite.py #{params[username]}") do |i, o, t|
-			p o.each { |line| Rails.logger.info line; sleep(5) }
+			p o.each { |line| Rails.logger.info line }
 		end
+		Rails.logger.info "*** MADE IT HERE ***"
 	end
 end
